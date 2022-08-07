@@ -23,6 +23,9 @@ function calculadora(valor){
     if(indice > 0){
         if(simb.includes(valor)){
             if( simb.includes(conta[indice-1])){
+                conta.pop();
+                conta.push(valor);
+                $('.tela').html(conta);
                 return;
             }else if(valor === '=' && aux === 0){
                 return;
@@ -86,6 +89,7 @@ function calculadora(valor){
     indice ++;
     if(valor === '='){
         $('.tela').html(conta);
+        conta = [];
         return;
     }
     $('.tela').html(conta);
